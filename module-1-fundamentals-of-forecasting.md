@@ -3,7 +3,7 @@
 ## 1.1 Why Forecast? Real-world Examples
 
 - Inventory management, financial markets, energy load, weather, demand, classification (will it rain? will customer churn?)  
-- *Project kickoff:* Examine your own use case or pick one dataset above.
+- *Project kickoff:* Find your own use case or pick one of the datasets from above examples.
 
 ---
 
