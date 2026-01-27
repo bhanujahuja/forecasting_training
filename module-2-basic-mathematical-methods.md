@@ -117,36 +117,124 @@ print(df[["Passengers", "LinRegForecast"]].head())
 - **(Demo left as a challenge)**
 
 ---
+---
 
-## 2.4 Model Evaluation: Simple Metrics
+## 2.5 Understanding Model Accuracy & Metrics
 
-- **MAE (Mean Absolute Error)**
-- **RMSE (Root Mean Squared Error)**
+### 2.5.1 Why Multiple Metrics Matter
+- **MAE (Mean Absolute Error):** Average absolute difference, easy to interpret, same units as data
+- **RMSE (Root Mean Squared Error):** Penalizes larger errors more heavily, sensitive to outliers
+- **MAPE (Mean Absolute Percentage Error):** Percentage-based, works well for comparing across scales
+- **sMAPE (Symmetric MAPE):** Better symmetry properties than MAPE
+
 ```python
-from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error, mean_squared_error
 import numpy as np
 
-mae = mean_absolute_error(df["Passengers"].dropna(), df["NaiveForecast"].dropna())
-rmse = np.sqrt(mean_squared_error(df["Passengers"].dropna(), df["NaiveForecast"].dropna()))
-print(f"Naive MAE: {mae:.2f}, RMSE: {rmse:.2f}")
+def evaluate_forecast(actual, predicted):
+    mae = mean_absolute_error(actual, predicted)
+    rmse = np.sqrt(mean_squared_error(actual, predicted))
+    mape = mean_absolute_percentage_error(actual, predicted)
+    return {'MAE': mae, 'RMSE': rmse, 'MAPE': mape}
+
+# Example
+metrics = evaluate_forecast(df["Passengers"].dropna(), df["NaiveForecast"].dropna())
+print(metrics)
 ```
 
 ---
 
-## 2.5 Mini Project: Build and Compare Baseline Models
+## 2.6 Train-Test Split for Time Series
 
-1. Use one of the provided datasets.
-2. Implement mean, naive, and moving average forecasts.  
-3. Plot results and compute metrics (MAE/RMSE).
-4. Try exponential smoothing and regression.
-5. Share your notebook & key findings in the course repo.
+### 2.6.1 Why Not Random Split?
+- Time series has temporal order; randomization breaks dependencies
+- Future data must remain in test set
+
+### 2.6.2 Correct Approach
+```python
+# Split: Train on first 90%, test on last 10%
+train_size = int(len(df) * 0.9)
+train_data = df[:train_size]
+test_data = df[train_size:]
+
+# Fit on training data, evaluate on test
+```
 
 ---
 
-## 2.6 Summary
+## 2.7 Mini Project: Build and Compare Baseline Models
+
+### 2.7.1 Project Objectives
+- Implement multiple baseline forecasting methods
+- Compare their performance systematically
+- Understand which method works best for your data
+
+### 2.7.2 Complete Project Steps
+
+1. **Choose your dataset**
+   - Use airline passengers or your own dataset from Module 1
+   - Ensure at least 50 observations for meaningful train-test split
+
+2. **Implement baseline methods**
+   - Mean forecast
+   - Naive (last value) forecast
+   - Seasonal naive (12-period lag for monthly data)
+   - Moving average (window=3, 6, 12)
+   - Exponential smoothing (Simple, Holt's, Holt-Winters)
+   - Linear regression on time index
+
+3. **Prepare train-test split**
+   ```python
+   train_size = int(len(df) * 0.8)
+   train, test = df[:train_size], df[train_size:]
+   ```
+
+4. **Fit and forecast**
+   - Fit each model on training data
+   - Generate forecasts for test period
+   - Store all forecasts in a results dataframe
+
+5. **Evaluate and compare**
+   - Calculate MAE, RMSE, MAPE for each method
+   - Create a comparison table
+   - Visualize actual vs. all forecasts
+
+6. **Visualize results**
+   ```python
+   import matplotlib.pyplot as plt
+   
+   plt.figure(figsize=(14, 6))
+   plt.plot(test.index, test['Passengers'], label='Actual', linewidth=2)
+   plt.plot(test.index, test['NaiveForecast'], label='Naive', alpha=0.7)
+   plt.plot(test.index, test['MAForecast'], label='Moving Avg', alpha=0.7)
+   # ... add more forecasts
+   plt.legend()
+   plt.title('Baseline Method Comparison')
+   plt.xlabel('Time')
+   plt.ylabel('Passengers')
+   plt.show()
+   ```
+
+7. **Analysis and insights**
+   - Which method performed best? Why?
+   - How does model complexity affect accuracy?
+   - Are there methods that work better for certain periods?
+   - Which method is most interpretable and practical?
+
+8. **Deliverables**
+   - Complete Jupyter notebook with all steps
+   - Comparison table (methods vs. error metrics)
+   - Visualization plots
+   - Summary of findings (150-200 words)
+
+---
+
+## 2.8 Summary
 
 - Baseline methods help you diagnose time series patterns and provide a comparison point for advanced models.
 - Understanding and testing these methods is critical before proceeding to statistical/ML techniques.
+- Always use proper train-test splits respecting time order.
+- Evaluate using multiple metrics and visualize results.
 
 ---
 

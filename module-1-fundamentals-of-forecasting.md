@@ -79,16 +79,60 @@ plt.show()
 
 ## 1.7 Mini Project: Explore and Visualize a Dataset
 
-- Pick a dataset, load it, and create first plots as above.
-- Answer these:
-    - What are you forecasting?
-    - Is data time series?
-    - What trends or seasonality do you see?
-- Share your notebook in the course repo!
+### 1.7.1 Project Overview
+- **Goal:** Develop intuition by exploring real-world time series data
+- **Deliverable:** Jupyter notebook with EDA, plots, and insights
+
+### 1.7.2 Project Steps
+
+1. **Choose your dataset**
+   - Use airline passengers (provided), or pick from Kaggle/UCI
+   - Options: Energy consumption, stock prices, weather, sales data
+   
+2. **Load and inspect the data**
+   ```python
+   import pandas as pd
+   df = pd.read_csv("your_data.csv")
+   print(df.info())
+   print(df.describe())
+   ```
+
+3. **Identify key characteristics**
+   - Time series or non-time-series?
+   - Granularity (hourly, daily, weekly, etc.)
+   - Missing values? Duplicates?
+   - Data types and ranges
+
+4. **Exploratory Data Analysis (EDA)**
+   - Visualize raw data (line plot)
+   - Check for trends (increasing/decreasing patterns)
+   - Identify seasonality (repeating cycles)
+   - Analyze statistical properties (mean, std, skewness)
+
+5. **Answer these critical questions**
+   - What are you trying to forecast?
+   - Is data time series?
+   - What patterns (trend/seasonality) do you observe?
+   - Are there obvious outliers or anomalies?
+   - What external factors might influence the data?
+
+6. **Document findings**
+   - Create summary statistics
+   - Include 4-5 visualizations
+   - Write conclusions about data characteristics
 
 ---
 
-## 1.8 Next Up
+## 1.8 Common Challenges & Tips
+
+- **Missing data:** Use interpolation or forward fill methods
+- **Outliers:** Document but don't remove; some are real events
+- **Non-stationary data:** Differences are expected; will address in Module 3
+- **Data quality:** Check for obvious errors (negative sales, etc.)
+
+---
+
+## 1.9 Next Up
 
 - Mathematical/basic forecasting methods  
   (see Module 2 in outline)
