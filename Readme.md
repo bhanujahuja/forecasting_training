@@ -8,22 +8,39 @@ This course teaches end-to-end forecasting with Python, spanning basic mathemati
 
 ---
 
+## 🎯 **Start Here!**
+
+### 🚀 First Time? Choose Your Path
+- **New to forecasting?** Start with [QUICKSTART.md](QUICKSTART.md) (5 minutes)
+- **Need a study plan?** Use [STUDENT_SUCCESS_MAP.md](STUDENT_SUCCESS_MAP.md) (visual guide)
+- **Want structured learning?** Follow [LEARNING_GUIDE.md](LEARNING_GUIDE.md) (detailed pathways)
+- **Need theory + practice?** Use [COMPREHENSIVE_STUDY_GUIDE.md](COMPREHENSIVE_STUDY_GUIDE.md)
+- **Ready to dive in?** Jump to Module 0 below
+
+---
+
 ## Quick Navigation
 
 **📚 Course Materials:**
-- [Module 0: Setup & Intro](module-0-intro-and-setup.md)
-- [Module 1: Fundamentals](module-1-fundamentals-of-forecasting.md) + [Notebook](code/module-1-fundamentals-of-forecasting.ipynb)
+- [Module 0: Setup & Intro](module-0-intro-and-setup.md) ✅ Enhanced
+- [Module 1: Fundamentals](module-1-fundamentals-of-forecasting.md) + [Notebook](code/module-1-fundamentals-of-forecasting.ipynb) ✅ Enhanced
 - [Module 2: Basic Methods](module-2-basic-mathematical-methods.md) + [Notebook](code/module-2-basic-mathematical-methods.ipynb)
 - [Module 3: Statistical Methods](module-3-statistical-time-series-methods.md) + [Notebook](code/module-3-statistical-time-series-methods.ipynb)
-- [Module 4: Machine Learning](module-4-machine-learning-for-forecasting.md) + [Notebook](code/module-4-machine-learning-for-forecasting.ipynb) ✨ **NEW**
-- [Module 5: Deep Learning](module-5-deep-learning-and-ai-methods.md) + [Notebook](code/module-5-deep-learning-and-ai-methods.ipynb) ✨ **NEW**
-- [Module 6: Advanced Topics](module-6-advanced-topics.md) ✨ **NEW**
-- [Capstone Project](capstone-project.md) + [Notebook](code/capstone-project.ipynb) ✨ **NEW**
+- [Module 4: Machine Learning](module-4-machine-learning-for-forecasting.md) + [Notebook](code/module-4-machine-learning-for-forecasting.ipynb)
+- [Module 5: Deep Learning](module-5-deep-learning-and-ai-methods.md) + [Notebook](code/module-5-deep-learning-and-ai-methods.ipynb)
+- [Module 6: Advanced Topics](module-6-advanced-topics.md)
+- [Capstone Project](capstone-project.md) + [Notebook](code/capstone-project.ipynb)
 
-**📋 Additional Resources:**
-- [Quick Start Guide](QUICKSTART.md) - Get started in 5 minutes
-- [Enhancement Summary](ENHANCEMENT_SUMMARY.md) - What's new in this version
-- [Completion Report](COMPLETION_REPORT.md) - Project status and metrics
+**📋 Learning Resources:**
+- [Quick Start Guide](QUICKSTART.md) - 5-minute setup
+- [Student Success Map](STUDENT_SUCCESS_MAP.md) - 🆕 Visual learning path with checklists
+- [Learning Guide](LEARNING_GUIDE.md) - 🆕 Study paths, success tips, resource library
+- [Comprehensive Study Guide](COMPREHENSIVE_STUDY_GUIDE.md) - 🆕 Theory explanations, practice problems, glossary
+- [Deep Dive Concepts](DEEP_DIVE_CONCEPTS.md) - 🆕 In-depth technical explanations with examples
+- [Enhancement Details](ENHANCEMENT_DETAILS.md) - 🆕 What's new, how to use all resources
+- [Enhancement Summary](ENHANCEMENT_SUMMARY.md) - Previous enhancements
+- [Completion Report](COMPLETION_REPORT.md) - Project metrics
+- [Project Completion](PROJECT_COMPLETION.md) - Final summary
 
 ---
 
