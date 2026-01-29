@@ -757,7 +757,7 @@ Result: Model only predicts future from past. Realistic.
 ---
 
 **Last Updated:** January 28, 2026  
-**Maintained By:** Course Team  
+**Maintained By:** Bhanuj Ahuja  
 **Version:** 1.0
 
 *This guide is meant to be a living document. Share feedback and suggestions!*
